@@ -1,0 +1,36 @@
+@mixin button-style($backgrund, $color) {
+  background: $backgrund;
+  color: $color;
+
+  &:hover {
+    background: grayscale($backgrund);
+  }
+}
+
+/*DARKEN = passar a cor e o valor obs a cor ja vem só precisamos passar o valor 
+ exemplo: 50%..
+  DESATURATE = tira a saturação das cores.. 
+  MIX = pode pegar (a cor que ja escolheu para o seu botão) 
+  duas cores para misturar as cores..
+  GRAYSCALE = nesse só passamos uma cor passamos o mause e ele da o 'cinza'*/
+.btn {
+  width: 200px;
+  padding: 10px 0;
+  background: none;
+  border: 0;
+  border-radius: 10px;
+  display: block;
+  margin: 10px 0;
+
+  &.btn-laranja {
+    @include button-style($color-orange, #fff)
+  }
+
+  &.btn-roxo {
+    @include button-style($color-roxo, #fff)
+  }
+
+  &.btn-amarelo {
+    @include button-style($color-amarelo, #000)
+  }
+}
